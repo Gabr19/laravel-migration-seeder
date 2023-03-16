@@ -11,20 +11,31 @@
     </head>
     <body>
 
+
         <main>
             <div class="container">
                 <div class="row">
-                    <div class="col text-center">
+                    @foreach ($trains as $train)
 
-                        <div class="card">
-                            <div class="card-body">
-                                <img src="{{ Vite::asset('resources/img/laravel.png') }}" alt="">
+                        <div class="col-3">
 
-                                <h1 class="card-title">Laravel 9 + Bootstrap Template</h1>
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <h2>
+                                       {{ $train->departure_station }}
+                                       {{ $train->arrival_station }}
+                                    </h2>
+
+
+                                </div>
                             </div>
-                        </div>
 
-                    </div>
+                        </div>
+                        
+                    @endforeach
+
+                        
                 </div>
             </div>
         </main>
